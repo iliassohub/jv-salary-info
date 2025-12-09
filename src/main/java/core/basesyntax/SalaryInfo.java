@@ -38,7 +38,7 @@ public class SalaryInfo {
                 }
             }
         }
-        header.append("Report for period ");
+        header.append("Report for period");
         header.append(" - ");
         header.append(dateFrom);
         header.append(" - ");
