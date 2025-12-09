@@ -14,7 +14,7 @@ public class SalaryInfo {
     public String getSalaryInfo(String[] names, String[] data, String dateFrom, String dateTo) {
         LocalDate fromDate = LocalDate.parse(dateFrom, formatter);
         LocalDate toDate = LocalDate.parse(dateTo, formatter);
-        StringBuilder header = new StringBuilder();
+        StringBuilder reportBuilder = new StringBuilder();
         int[] totals = new int[names.length];
 
         for (String dataLine : data) {
@@ -38,16 +38,20 @@ public class SalaryInfo {
                 }
             }
         }
-        header.append("Report for period ");
-        header.append(dateFrom);
-        header.append(" - ");
-        header.append(dateTo);
-        header.append(System.lineSeparator());
+        reportBuilder.append("Report for period ");
+        reportBuilder.append(dateFrom);
+        reportBuilder.append(" - ");
+        reportBuilder.append(dateTo);
+        reportBuilder.append(System.lineSeparator());
         for (int j = 0; j < names.length; j++) {
-            header.append(names[j]);
-            header.append(" - ");
-            header.append(totals[j]);
+            reportBuilder.append(names[j]);
+            reportBuilder.append(" - ");
+            reportBuilder.append(totals[j]);
+            if (j < names.length - 1) {
+                reportBuilder.append(System.lineSeparator());
+            }
+
         }
-        return header.toString();
+        return reportBuilder.toString();
     }
 }
