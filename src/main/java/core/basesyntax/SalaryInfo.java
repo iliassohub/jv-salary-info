@@ -47,7 +47,6 @@ public class SalaryInfo {
             header.append(names[j]);
             header.append(" - ");
             header.append(totals[j]);
-            header.append(System.lineSeparator());
         }
         return header.toString();
     }
