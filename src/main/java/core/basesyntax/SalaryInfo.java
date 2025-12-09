@@ -47,7 +47,7 @@ public class SalaryInfo {
             reportBuilder.append(names[j]);
             reportBuilder.append(" - ");
             reportBuilder.append(totals[j]);
-            if (j < names.length -1) {
+            if (j < names.length - 1) {
                 reportBuilder.append(System.lineSeparator());
             }
         }
